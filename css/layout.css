@@ -1,0 +1,28 @@
+body {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas: 
+        "head head head"
+        "menu feed msg";
+}
+
+header {
+    grid-area: head;
+    background-color: blue;
+}
+
+aside {
+    background-color: aquamarine;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.messenger {
+    grid-area: msg;
+}
+
+main {
+    background-color: azure;
+}
