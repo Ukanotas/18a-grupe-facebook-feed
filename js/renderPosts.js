@@ -16,6 +16,44 @@ function renderPosts(data) {
 
     // perrasome reikiamo HTML elemento turini
     feedDOM.innerHTML = HTML;
+
+    // uzdeti norimas JS interakcijas
+    const allSeeMoreDOM = document.querySelectorAll('.post .see-more');
+    const allSeeLessDOM = document.querySelectorAll('.post .see-less')
+
+    // einame per kiekviena rasta .see-more elementa
+    for (let i = 0; i < allSeeMoreDOM.length; i++) {
+        const seeMore = allSeeMoreDOM[i];
+
+        seeMore.addEventListener('click', function () {
+            // nukeliaujame/susirande artimiausia tevini elementa .content
+            const contentDOM = seeMore.closest('.content');
+            // tam elementui uzdeti klase show
+            contentDOM.classList.add('show');
+        });
+    }
+
+    //einame per kiekviena rasta .see-less elementa
+    for (let i = 0; i < allSeeLessDOM.length; i++) {
+        const seeLess = allSeeLessDOM[i];
+
+        seeLess.addEventListener('click', function() {
+            const contentDOM2 = seeLess.closest('.content');
+            contentDOM2.classList.remove('show');
+        })
+    }
 }
 
 export default renderPosts;
+
+
+
+// <div class="content show">
+//     <p>Text...<span>See more</span></p>
+//     <p class="hidden">Text fasdmfl amsd;fkm as;df asd </p>
+// </div>
+
+// .content > .hidden {display: none;}
+
+// .content.show > p {display: none;}
+// .content.show > p.hidden {display: block;}
