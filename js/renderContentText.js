@@ -16,7 +16,7 @@ function renderContentText(text) {
         for (let i = 0; i < normalTextLength; i++) {
             shorterText += text[i];
         }
-        return `<p>${shorterText}... <span class="see-more">See more</span></p>
+        return `<p>${shorterText}... <span class="see-more"><br>See more</span></p>
                 <p class="hidden">${text}<br><span class="see-less">See less</span></p>`;
     } else {
         // o jei teksto daugiau nei leidziama maksimaliai - rodom klaida
